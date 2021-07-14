@@ -9,17 +9,21 @@ body{
 
  main{
      display: flex;
-     justify-content: center;
+     flex-direction: column;
+     align-items: center;
     
  }
  .container{
     background: #FFFFFF;
     width: 870px;
     padding: 30px;
+    margin-top: 21px;
+    border-radius: 5px;
   
  }
  hr{
     border: 1px solid #D1D1D1;
+    margin-bottom: 30px;
  }
 
 /* top-players styles start */
@@ -52,9 +56,13 @@ body{
 
 
 /* Top-blog styles start */
-
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
 .blog{
-   display:flex ;   
+   display:flex ;  
+  grid-row-gap: 30px;
 }
 .blog .blog-cover img{
     width: 177px;
@@ -74,4 +82,90 @@ body{
     font-size: 16px;
     color: #562EFF;
     text-decoration: none;
+}
+
+
+/* lates course starts */
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 24px;
+}
+.course{
+    width: 252px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px  white;
+}
+
+.course-banner img{
+    width: 224px;
+    height: 104px;
+}
+.course-details h3{
+    font-size: 20px;
+   
+}
+.author{
+    color:#ED6B4F;
+    font-size: 14px;
+}
+.course-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.fa-star{
+    font-size: 12px;
+}
+.fa-star.filled{
+    color: #FFC014;
+}
+.fa-star.empty{
+    color: #AEAEAE;
+}
+.duration-clock{
+    color: #FF4A60;
+    background: #FFE4E8;
+    border-radius: 14px;
+}
+
+
+
+/* midea quries for mobile which max-size 668 */
+
+@media only screen and (max-width:668px ) {
+    .container{
+        width: 100%;
+    }
+    .players, .blogs, .courses{
+       
+        grid-template-columns: repeat(1, 1fr);
+      
+       
+
+    }
+    .player, .blog, .course{
+       flex-direction: column;
+       
+     
+    }
+   
+
+  
+}
+
+@media only screen and (max-width:992px) {
+
+    .container{
+        width: 100%;
+    }
+    .players, .courses{
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+    .blogs{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
 }
